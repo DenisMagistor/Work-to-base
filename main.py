@@ -1,11 +1,30 @@
-class CountObject:
-    instance = 0
+def calculator(expression):
+    allowed = '+-/*'
 
-    def __init__(self):
-        self.__class__.instance += 1
+    if not any(sign in expression for sign in allowed):
+        raise ValueError('Выражение должно содержать хоть один знак {}'.format(allowed))
 
-b= CountObject().instance
-c= CountObject().instance
-q= CountObject().instance
+    for sign in allowed:
+        if sign in expression:
+            try:
+                left, right = expression.split(sign)
+                left, right = int(left), int(right)
 
-print(b, c, q)
+                if sign == '+':
+                    return left + right
+
+                if sign == '-':
+                    return left - right
+
+                if sign == '*':
+                    return left * right
+                    
+                if sign == '/':
+                    return left / right
+            
+            except (ValueError, TypeError):
+                raise ValueError('Выражения должно содержать 2 числа и 1 знак')
+            
+
+if __name__ == '__main__':
+    print(calculator('2*2'))
