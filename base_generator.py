@@ -1,3 +1,4 @@
+# Generate data for use in BD
 def generator_data(list_: list = [], need: int = 1):
     from faker import Faker
     from random import randint

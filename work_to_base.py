@@ -1,3 +1,4 @@
+# Get data from the DB
 def work(data: list = []):
     import sqlite3
 
