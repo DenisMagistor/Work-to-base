@@ -1,8 +1,3 @@
-# Работа с SQLite 3
-# Создать базу данных
-# Создать для базы данных генератор данных {name: str, age: int, email: str}
-# и желательно отсортировать прежде чем добавлять
-
 from base_generator import generator_data
 
 if __name__ == '__main__':
